@@ -1,0 +1,1109 @@
+/* Reset Básico e Estilos Globais */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos do Header */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    padding: 15px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header com Efeito de Rolagem */
+.main-header.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-header.scrolled .nav-link {
+    color: #333; /* Cor do texto do menu quando o fundo é branco */
+}
+
+.main-header.scrolled .nav-link:hover {
+    color: #FFC107; /* Amarelo */
+}
+
+.main-header.scrolled .nav-link.active {
+    color: #FFC107; /* Amarelo */
+    border-bottom: 2px solid #FFC107;
+}
+
+/* Logo */
+.logo {
+    height: 50px; /* Ajuste a altura conforme sua logo */
+    width: auto;
+    display: block;
+}
+
+/* Navegação Principal */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 30px; /* Espaçamento entre os itens do menu */
+}
+
+.nav-link {
+    color: white; /* Cor inicial do texto do menu */
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* Para o efeito de sublinhado */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #FFC107; /* Amarelo */
+}
+
+.nav-link.active {
+    color: #FFC107; /* Amarelo */
+    border-bottom: 2px solid #FFC107;
+}
+
+/* Dropdown "Serviços" */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: 10px 0;
+    margin-top: 15px; /* Espaço entre o menu e o item "Serviços" */
+    min-width: 200px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    color: #333;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f4f4f4;
+    color: #FFC107;
+}
+
+.arrow-down {
+    font-size: 0.7em;
+    margin-left: 5px;
+}
+
+
+/* Botão de Cotação (Call to Action) */
+.cta-button {
+    background-color: #FFC107; /* Amarelo */
+    color: #333;
+    padding: 12px 25px;
+    border-radius: 25px; /* Bordas arredondadas */
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05); /* Efeito de aumento */
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+}
+
+
+/* Seção Hero (Apenas para demonstração) */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Escurece o vídeo para o texto ficar legível */
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    overflow: visible; /* Permite que os cards de baixo "vazem" para fora */
+
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.video-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.video-background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw; /* 100/56.25 = 1.77 -> Proporção 16:9 */
+    min-height: 100vh;
+    min-width: 177.77vh; /* 100*1.77 -> Proporção 16:9 */
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Impede interação com o vídeo */
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.hero-traces {
+    margin-bottom: 20px;
+}
+.hero-traces span {
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #FFC107; /* Amarelo */
+    border-radius: 2px;
+}
+.hero-traces span:first-child {
+    margin-bottom: 8px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem; /* 56px */
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero-content h2 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 400;
+    margin: 0 0 30px 0;
+    line-height: 1.5;
+    max-width: 500px; /* Limita a largura do subtítulo */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.cta-button-hero {
+    background-color: #FFC107; /* Amarelo */
+    color: #333;
+    padding: 15px 35px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button-hero:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+}
+
+
+/* =================================
+   ESTILOS DA SEÇÃO DE CARDS
+   ================================= */
+.cards-section {
+    background-color: #ffffff;
+    padding: 200px 20px 80px 20px; /* Padding-top grande para dar espaço para os cards */
+    position: relative;}
+
+.cards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    
+    /* O truque para invadir a seção de cima */
+    position: absolute;
+    width: 100%;
+    max-width: 1200px;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    z-index: 5;
+}
+
+.info-card {
+    background-color: #FFC107; /* Amarelo */
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.info-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.cards-section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* =================================
+   ESTILOS DA QUEM SOMOS SECTION
+   ================================= */
+
+.about-section {
+    padding: 100px 20px;
+    margin-top: 120px;
+    background-color: #f8f9fa; /* Um cinza bem claro para diferenciar da seção branca */
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Espaçamento entre a imagem e o texto */
+}
+
+.about-image {
+    flex: 1; /* Ocupa metade do espaço */
+    max-width: 50%;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Bordas arredondadas para a imagem */}
+
+.about-content {
+    flex: 1; /* Ocupa a outra metade */
+    max-width: 50%;
+    text-align: left;
+}
+
+/* Estilos de texto reutilizáveis que podemos usar em outras seções */
+.section-subtitle {
+    color: #FFC107; /* Amarelo */
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    color: #333;
+    font-size: 2.5rem; /* 40px */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.section-paragraph {
+    color: #555;
+    font-size: 1rem; /* 16px */
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.cta-button-secondary {
+    background-color: #FFC107;
+    color: #333;
+    padding: 12px 30px;
+    border: 2px solid #FFC107; /* Borda amarela */
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.cta-button-secondary:hover {
+    background-color: #FFC107;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* =================================
+   ESTILOS DA SOBRE MAIS SECTION
+   ================================= */
+
+.more-about-section {
+    padding-top: 20px;
+    padding-bottom: 0;
+    background-color: #ffffff; /* Fundo branco para alternar com a seção anterior */
+    overflow: hidden; /* Evita que a imagem vaze caso seja muito grande */
+}
+
+.more-about-container {
+    max-width: 1200px;
+    display: flex;
+    gap: 60px;
+}
+
+.more-about-image {
+    flex: 1; 
+    max-width: 32%; /* Um pouco menor que o texto para dar mais destaque ao conteúdo */
+}
+
+.more-about-image img {
+    width: 100%;
+    display: block; /* Remove pequenos espaços em branco abaixo da imagem */
+    border-radius: 10px;
+}
+
+.more-about-content {
+    flex: 1;
+    padding-top: 90px;
+    max-width: 55%;
+}
+
+/* - A classe .hero-traces já foi estilizada na Hero Section.
+   - As classes .section-title, .section-paragraph e .cta-button-secondary
+     já foram estilizadas na seção "Quem Somos".
+   - Estamos reutilizando os estilos para manter a consistência!
+*/
+
+/* =================================
+   ESTILOS DA SERVIÇOS SECTION
+   ================================= */
+
+.services-section {
+    padding: 100px 20px;
+    background-color: #111111; /* Preto/Cinza bem escuro */
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.services-content {
+    flex: 1;
+    max-width: 35%; /* O texto ocupa um espaço menor */
+    text-align: left;
+}
+
+/* Precisamos ajustar as cores dos títulos e parágrafos para o fundo escuro */
+.services-content .section-title,
+.services-content .section-paragraph {
+    color: #ffffff;
+}
+
+/* Reutilizando o botão principal que criamos para o header */
+.services-content .cta-button {
+    background-color: #FFC107;
+    color: #111;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.services-content .cta-button:hover {
+    transform: scale(1.05);
+}
+
+
+/* Container dos Cards de Serviço */
+.services-cards-container {
+    flex: 1;
+    max-width: 65%; /* Os cards ocupam o espaço maior */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alinha o conteúdo na base do card */
+    min-height: 450px; /* Garante que o card seja alto */
+    padding: 25px;
+    border-radius: 15px;
+    overflow: hidden; /* Garante que a imagem de fundo não ultrapasse as bordas arredondadas */
+    text-decoration: none;
+    color: #ffffff;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card:hover {
+    transform: scale(1.05); /* Efeito de ampliar */
+    box-shadow: 0 20px 40px rgba(255, 193, 7, 0.2); /* Sombra amarelada sutil */
+}
+
+/* Camada da imagem de fundo */
+.card-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .card-bg-image {
+    transform: scale(1.1); /* Efeito de zoom na imagem de fundo também */
+}
+
+/* Overlay escuro para garantir a legibilidade do texto */
+.card-bg-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.1) 80%);
+    z-index: 2;
+}
+
+.service-card-content {
+    position: relative;
+    z-index: 3; /* Conteúdo fica acima da imagem e do overlay */
+}
+
+.service-card-icon {
+    margin-bottom: 15px;
+}
+
+.service-card-icon img {
+    width: 60px;
+    height: auto;
+    opacity: 0.9;
+}
+
+.service-card-title {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.service-card-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* =================================
+   ESTILOS DA FROTA SECTION
+   ================================= */
+
+.fleet-section {
+    padding: 100px 20px;
+    background-color: #f8f9fa; /* Alternando a cor de fundo novamente */
+}
+
+.fleet-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.fleet-content {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+}
+
+.fleet-card-wrapper {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center; /* Centraliza o card no espaço disponível */
+    align-items: center;
+}
+
+.fleet-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px; /* Raio de canto */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08); /* Sombra (shadow) */
+    text-align: center;
+    max-width: 400px; /* Define uma largura máxima para o card */
+    border-top: 5px solid #FFC107; /* Detalhe em amarelo no topo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fleet-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+}
+
+.fleet-card-icon img {
+    width: 80px; /* Tamanho do ícone */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.fleet-card-title {
+    font-size: 1.75rem;
+    color: #333;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+}
+
+.fleet-card-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.fleet-card-button {
+    background-color: #FFC107; /* Amarelo */
+    color: #333;
+    padding: 14px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.fleet-card-button:hover {
+    background-color: #e0a800; /* Um tom de amarelo mais escuro */
+}
+
+/* =================================
+   ESTILOS DA PARCEIROS & CLIENTES SECTION
+   ================================= */
+
+.partners-section {
+    padding: 100px 0; /* Aumentei o padding vertical e removi o horizontal */
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.partners-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.partners-title-block {
+    margin-bottom: 60px;
+}
+
+/* Wrapper do Carrossel */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Esconde tudo que sair da área do wrapper */
+    margin-bottom: 30px; /* Espaço entre os dois carrosséis */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Trilha do Carrossel */
+.carousel-track {
+    display: flex;
+    width: calc(250px * 12); /* Largura de cada slide X número total de slides (originais + duplicados) */
+}
+
+.scroll-right {
+    animation: scrollRight 40s linear infinite;
+}
+
+.scroll-left {
+    animation: scrollLeft 40s linear infinite;
+}
+
+/* Slide (item do carrossel) */
+.carousel-slide {
+    height: 100px; /* Altura de cada logo */
+    width: 250px; /* Largura de cada logo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 60px; /* Altura máxima da imagem do logo */
+    filter: grayscale(100%); /* Deixa os logos em escala de cinza */
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.carousel-slide:hover img {
+    filter: grayscale(0%); /* Remove o filtro ao passar o mouse */
+    opacity: 1;
+}
+
+/* Animações Keyframes */
+@keyframes scrollRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-250px * 6)); /* Desloca para a esquerda pelo tamanho dos slides originais */
+    }
+}
+
+@keyframes scrollLeft {
+    from {
+        transform: translateX(calc(-250px * 6));
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* =================================
+   ESTILOS DA SEÇÃO DE COTAÇÃO/CONTATO
+   ================================= */
+
+.contact-section {
+    background-color: #111111;
+    padding: 100px 20px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+}
+
+/* Coluna do Formulário */
+.form-wrapper {
+    flex-basis: 65%;
+}
+
+.contact-title {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.contact-title span {
+    color: #FFC107; /* Amarelo */
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+.contact-form .form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+    flex: 1; /* Faz com que os grupos em uma linha dividam o espaço */
+}
+
+.contact-form .form-group.full-width {
+    width: 100%;
+}
+
+.contact-form label {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+/* Adiciona o asterisco vermelho */
+.contact-form label::after {
+    content: ' *';
+    color: #e74c3c;
+}
+
+.contact-form input,
+.contact-form select {
+    width: 100%;
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    color: #ffffff;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form select:focus {
+    outline: none;
+    border-color: #FFC107;
+}
+
+.contact-form select {
+    appearance: none; /* Remove a seta padrão */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: #FFC107;
+    color: #111;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #e0a800;
+}
+
+/* Coluna da Direita (Sidebar) */
+.sidebar-wrapper {
+    flex-basis: 35%;
+}
+
+.sidebar-title {
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.channels-block {
+    margin-bottom: 50px;
+}
+
+.channel-card {
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+}
+
+.channel-card img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1); /* Deixa os ícones pretos em branco */
+}
+
+.about-us-block p {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* =================================
+   ESTILOS DO FOOTER
+   ================================= */
+
+.main-footer {
+    color: #dcdcdc; /* Cor de texto padrão para o footer */
+}
+
+.footer-main {
+    position: relative;
+    padding: 80px 20px;
+    background-image: url('/imgs/bg_footer.jpg'); /* << COLOQUE UMA IMAGEM DE FUNDO AQUI */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Overlay "esfumaçado" */
+.footer-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.85);
+    z-index: 1;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 220px; /* Largura mínima para cada coluna */
+}
+
+/* Coluna "Sobre" */
+.about-col .footer-logo {
+    max-width: 180px;
+    margin-bottom: 20px;
+}
+.about-col .footer-about-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+.about-col .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #555;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.about-col .social-icon:hover {
+    background-color: #FFC107;
+    border-color: #FFC107;
+}
+.about-col .social-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Colunas de Links */
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.links-col ul, .services-col ul {
+    list-style: none;
+    padding: 0;
+}
+.links-col ul li, .services-col ul li {
+    margin-bottom: 12px;
+}
+.links-col ul li a, .services-col ul li a {
+    color: #dcdcdc;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.links-col ul li a:hover, .services-col ul li a:hover {
+    color: #FFC107;
+    padding-left: 5px;
+}
+
+/* Coluna de Contato */
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+.contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+.contact-list li img {
+    width: 20px;
+    margin-top: 3px;
+}
+.contact-list li a, .contact-list li span {
+    color: #dcdcdc;
+    text-decoration: none;
+    line-height: 1.6;
+}
+.contact-list li a:hover {
+    color: #FFC107;
+}
+
+/* Barra Inferior do Footer */
+.footer-bottom {
+    background-color: #000000;
+    padding: 20px;
+}
+
+.footer-bottom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.85rem;
+    color: #aaa;
+}
+.credits-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.credits-text a {
+    color: #aaa;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.credits-text a:hover {
+    color: #fff;
+}
+.credits-logo {
+    height: 20px;
+    width: auto;
+}
+
+/* =================================
+   ESTILOS DO BOTÃO WHATSAPP
+   ================================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+.whatsapp-float img {
+    width: 65px;
+    height: 65px;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 22px;
+    height: 22px;
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
