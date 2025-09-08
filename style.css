@@ -450,7 +450,7 @@ ul {
 
 .section-paragraph {
     color: #555;
-    font-size:15px;
+    font-size: 15px;
     /* 16px */
     line-height: 1.7;
     margin-bottom: 30px;
@@ -735,13 +735,13 @@ ul {
     margin: 0 0 15px 0;
 }
 
-.fleet-card-element{
+.fleet-card-element {
     display: flex;
     align-items: center;
     justify-content: start;
 }
 
-.fleet-card-element>img{
+.fleet-card-element>img {
     margin-right: 5px;
 }
 
@@ -938,7 +938,8 @@ ul {
     border-radius: 8px;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
-    line-height: normal; /* ou um valor como 1.5 para maior espaçamento */
+    line-height: normal;
+    /* ou um valor como 1.5 para maior espaçamento */
 }
 
 .contact-form select {
@@ -949,9 +950,9 @@ ul {
     background-position: right 1rem center;
     background-size: 1em;
 
-    height: auto; 
+    height: auto;
 
-    box-sizing: border-box; 
+    box-sizing: border-box;
 
     padding: 18px;
     width: 110%;
@@ -1246,4 +1247,220 @@ ul {
     justify-content: center;
     font-size: 0.8rem;
     font-weight: bold;
+}
+
+
+
+@media(max-width: 770px) {
+    .main-nav {
+        display: none;
+    }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(1, 3fr);
+        align-items: center;
+        justify-items: center;
+    }
+
+
+    .about-section {
+        padding: 30vh 20px 80px 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .about-image {
+        max-width: 100%;
+    }
+
+    .about-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+
+    .more-about-section {
+        padding-top: 0;
+        padding-bottom: 80px;
+    }
+
+    .more-about-container {
+        max-width: 80vw;
+        gap: 60px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        text-align: center;
+    }
+
+    .more-about-image {
+        display: none;
+        max-width: 100%;
+
+    }
+
+    .more-about-content {
+        max-width: 100%;
+    }
+
+
+
+    .services-container {
+        max-width: 90vw;
+        flex-direction: column;
+    }
+
+    .services-content {
+        flex: 1;
+        max-width: 100%;
+        text-align: center;
+    }
+
+
+    .services-cards-container {
+        max-width: 95%;
+        grid-template-columns: repeat(1, 3fr);
+        gap: 25px;
+    }
+
+    .service-card {
+        justify-content: center;
+        min-height: 280px;
+        min-width: 200px;
+    }
+
+    .service-card-icon img {
+        width: 40px;
+    }
+
+    .fleet-container {
+        flex-direction: column;
+    }
+
+    .fleet-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .fleet-card-wrapper {
+        max-width: 100%;
+    }
+
+
+    /* =================================
+        Estilos da Seção de Contato
+       ================================= */
+    .contact-container {
+        flex-direction: column;
+        gap: 60px;
+        text-align: center;
+
+        max-width: 90vw;
+        width: 90vw;
+        overflow: hidden;
+    }
+
+    .form-wrapper,
+    .sidebar-wrapper {
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form .form-row {
+        flex-direction: column;
+        gap: 0;
+        max-width: 320px;
+    }
+
+    .contact-form select {
+        width: 350px;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+
+    .contact-title {
+        font-size: 28px;
+    }
+
+    .channels-block,
+    .about-us-block {
+        text-align: left;
+    }
+
+    .contact-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact-list li {
+        gap: 5px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* =================================
+        Estilos do Footer
+       ================================= */
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-col {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .about-col .footer-logo {
+        margin: 0 auto 20px;
+    }
+
+    .about-col .social-icons {
+        justify-content: center;
+    }
+
+    .footer-bottom-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
 }
