@@ -1256,6 +1256,20 @@ ul {
         display: none;
     }
 
+    .hero-content {
+        margin-bottom: 10vh;
+    }
+
+    .hero-content h1 {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .hero-content h2 {
+        font-size: 15px;
+        margin: 0;
+    }
+
     .cards-container {
         display: grid;
         grid-template-columns: repeat(1, 3fr);
@@ -1263,9 +1277,33 @@ ul {
         justify-items: center;
     }
 
+    .info-card {
+        max-width: 90vw;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    .card-icon {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 0px;
+    }
+
+    .info-card h3 {
+        font-size: 15px;
+    }
+
+    .info-card p {
+        font-size: 13px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
 
     .about-section {
-        padding: 30vh 20px 80px 20px;
+        padding: 20vh 20px 80px 20px;
     }
 
     .about-container {
@@ -1282,6 +1320,17 @@ ul {
         text-align: center;
     }
 
+    .hero-traces {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-traces span {
+        width: 80vw;
+        height: 1px;
+    }
+
 
     .more-about-section {
         padding-top: 0;
@@ -1290,19 +1339,20 @@ ul {
 
     .more-about-container {
         max-width: 80vw;
-        gap: 60px;
+        gap: 0;
         align-items: center;
         justify-content: center;
-        flex-direction: row;
+        flex-direction: column;
 
         text-align: center;
     }
 
     .more-about-image {
-        display: none;
+        /* display: none; */
         max-width: 100%;
-
+    
     }
+
 
     .more-about-content {
         max-width: 100%;
@@ -1332,6 +1382,8 @@ ul {
         justify-content: center;
         min-height: 280px;
         min-width: 200px;
+
+        text-align: center;
     }
 
     .service-card-icon img {
@@ -1381,6 +1433,10 @@ ul {
 
     .contact-form select {
         width: 350px;
+    }
+
+    .contact-form label {
+        text-align: left;
     }
 
     .submit-button {
