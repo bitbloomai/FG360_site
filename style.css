@@ -395,7 +395,8 @@ ul {
 .about-section {
     padding: 100px 20px;
     margin-top: 120px;
-    background-color: #f8f9fa;
+    /* background-color: #f8f9fa; */
+    background-color: white;
     /* Um cinza bem claro para diferenciar da seção branca */
 }
 
@@ -481,7 +482,7 @@ ul {
 
 .more-about-section {
     padding-top: 20px;
-    padding-bottom: 0;
+    padding-bottom: 100px;
     background-color: #ffffff;
     /* Fundo branco para alternar com a seção anterior */
     overflow: hidden;
@@ -500,7 +501,7 @@ ul {
 
 .more-about-image {
     flex: 1;
-    max-width: 32%;
+    max-width: 50%;
     /* Um pouco menor que o texto para dar mais destaque ao conteúdo */
 }
 
@@ -528,7 +529,7 @@ ul {
 
 .services-section {
     padding: 100px 20px;
-    background-color: #111111;
+    background-color: black;
     /* Preto/Cinza bem escuro */
 }
 
@@ -776,7 +777,7 @@ ul {
 .partners-section {
     padding: 20px 0;
     /* Aumentei o padding vertical e removi o horizontal */
-    background-color: #ffffff;
+    background-color: #f8f9fa;
     text-align: center;
 }
 
@@ -1303,7 +1304,7 @@ ul {
 
 
     .about-section {
-        padding: 20vh 20px 80px 20px;
+        padding: 20vh 20px 20px 20px;
     }
 
     .about-container {
@@ -1333,7 +1334,6 @@ ul {
 
 
     .more-about-section {
-        padding-top: 0;
         padding-bottom: 80px;
     }
 
@@ -1355,6 +1355,7 @@ ul {
 
 
     .more-about-content {
+        margin-top: 20px;
         max-width: 100%;
     }
 
@@ -1390,6 +1391,10 @@ ul {
         width: 40px;
     }
 
+    .fleet-section{
+        padding: 50px 10px;
+    }
+
     .fleet-container {
         flex-direction: column;
     }
@@ -1397,10 +1402,18 @@ ul {
     .fleet-content {
         max-width: 100%;
         text-align: center;
+        padding:  0 20px;
     }
 
     .fleet-card-wrapper {
         max-width: 100%;
+    }
+
+    .fleet-card{
+        max-width: 100vw;
+        width: 100vw;
+        padding: 10px;
+        margin: 0 10px;
     }
 
 
