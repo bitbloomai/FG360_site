@@ -206,7 +206,7 @@ ul {
 
 .hero-section {
     position: relative;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     color: white;
@@ -252,7 +252,7 @@ ul {
 
 .hero-content {
     max-width: 700px;
-    margin: 0 auto;
+    margin-bottom: 50px;
     padding: 0 20px;
     text-align: center;
 }
@@ -338,7 +338,7 @@ ul {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 80px;
 
     position: absolute;
     width: 100%;
@@ -395,7 +395,8 @@ ul {
    ================================= */
 
 .about-section {
-    padding: 100px 0; /* Ajustamos o padding para a seção inteira */
+    padding-top: 120px;
+    padding-bottom: 30px;
     margin-top: 60px;
     background-color: white;
 }
@@ -415,16 +416,15 @@ ul {
 /* AQUI A MÁGICA ACONTECE */
 .about-container::before {
     content: ''; /* Obrigatório para pseudo-elementos */
-    position: absolute;
+    position:absolute;
     top: 50%; /* Centraliza verticalmente */
     left: 0;  /* Cola na borda esquerda */
     transform: translateY(-50%); /* Ajuste fino da centralização vertical */
-    
-    width: 50%; /* Ocupa um pouco mais da metade da largura do container */
-    height: 90%; /* A altura pode ser maior que 100% para criar uma curva mais suave */
+    width: 45%; /* Ocupa um pouco mais da metade da largura do container */
+    height: 100%; /* A altura pode ser maior que 100% para criar uma curva mais suave */
     
     /* A IMAGEM QUE VOCÊ QUER USAR */
-    background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),  url('/imgs/ph12.jpg'); /* <<< TROQUE PELO CAMINHO DA SUA IMAGEM */
+    background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),  url('imgs/ph12.jpg'); /* <<< TROQUE PELO CAMINHO DA SUA IMAGEM */
     background-size: cover;
     background-position: center;
 
@@ -440,14 +440,15 @@ ul {
     width: 40%; /* Define a largura da área de texto */
     margin-left: auto; /* Empurra o texto para a direita */
     padding-left: 80px; /* Adiciona um respiro entre a curva da imagem e o texto */
-    padding-right: 40px;
+    padding-right: 80px;
     text-align: left;
 }
 
 .about-image {
     flex: 1;
     /* Ocupa metade do espaço */
-    max-width: 50%;
+    max-width: 90%;
+    margin-left: 20000px;
 }
 
 .about-image img {
@@ -568,7 +569,7 @@ ul {
     margin: 0;
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 0px;
 }
 
 .services-content {
@@ -602,7 +603,7 @@ ul {
 /* Container dos Cards de Serviço */
 .services-cards-container {
     flex: 1;
-    max-width: 45%;
+    max-width: 100%;
     /* Os cards ocupam o espaço maior */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -643,6 +644,7 @@ ul {
     position: absolute;
     top: 0;
     left: 0;
+    margin-left: 5px;
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -894,159 +896,256 @@ ul {
 }
 
 /* =================================
-   ESTILOS DA SEÇÃO DE COTAÇÃO/CONTATO
+   ESTILOS DA PARCEIROS & CLIENTES SECTION 2
    ================================= */
 
+.partners-section2 {
+    padding-top: 40PX;
+    /* Aumentei o padding vertical e removi o horizontal */
+    background-color: #fFfFfF;
+    text-align: center;
+}
+
+.partners-container2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.partners-title-block2 {
+    margin-bottom: 30px;
+}
+
+/* Wrapper do Carrossel */
+.carousel-wrapper2 {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Esconde tudo que sair da área do wrapper */
+    margin-bottom: 30px;
+    /* Espaço entre os dois carrosséis */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Trilha do Carrossel */
+.carousel-track2 {
+    display: flex;
+    width: calc(250px * 12);
+    /* Largura de cada slide X número total de slides (originais + duplicados) */
+}
+
+.scroll-right2 {
+    animation: scrollRight 40s linear infinite;
+}
+
+/* Slide (item do carrossel) */
+.carousel-slide2 {
+    height: 200px;
+    /* Altura de cada logo */
+    width: 250px;
+    /* Largura de cada logo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.carousel-slide2 img {
+    max-width: 150%;
+    max-height: 1000px;
+    /* Altura máxima da imagem do logo */
+    filter: grayscale(100%);
+    /* Deixa os logos em escala de cinza */
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.carousel-slide2:hover img {
+    filter: grayscale(0%);
+    /* Remove o filtro ao passar o mouse */
+    opacity: 1;
+}
+
+/* Animações Keyframes */
+@keyframes scrollRight {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-250px * 6));
+        /* Desloca para a esquerda pelo tamanho dos slides originais */
+    }
+}
+
+@keyframes scrollLeft {
+    from {
+        transform: translateX(calc(-250px * 6));
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* =================================
+ ESTILOS DA SEÇÃO DE COTAÇÃO/CONTATO
+ ================================= */
+
 .contact-section {
-    background-color: #1c1c1b;
-    padding: 60px 80px;
+  background-color: #1c1c1b;
+  padding: 60px 80px;
 }
 
 .contact-container {
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 200px;
 }
 
 /* Coluna do Formulário */
 .form-wrapper {
-    flex-basis: 50%;
+  flex-basis: 50%;
 }
 
 .contact-title {
-    color: #ffffff;
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 40px;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
 }
 
 .contact-title span {
-    color: #e7a540;
-    /* Amarelo */
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
+  color: #e7a540;
+  /* Amarelo */
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
 }
 
 .contact-form .form-row {
-    display: flex;
-    gap: 50px;
+  display: flex;
+  gap: 50px;
 }
 
 .contact-form .form-group {
-    margin-bottom: 20px;
-    flex: 1;
-    /* Faz com que os grupos em uma linha dividam o espaço */
+  margin-bottom: 20px;
+  flex: 1;
+  /* Faz com que os grupos em uma linha dividam o espaço */
 }
 
 .contact-form .form-group.full-width {
-    width: 100%;
+  width: 100%;
 }
 
 .contact-form label {
-    display: block;
-    color: #ffffff;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    font-weight: 600;
+  display: block;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 /* Adiciona o asterisco vermelho */
 .contact-form label::after {
-    content: ' *';
-    color: #e74c3c;
+  content: ' *';
+  color: #e74c3c;
 }
 
 .contact-form input,
 .contact-form select {
-    width: 100%;
-    background-color: #2d2d2d;
-    border: 1px solid #444;
-    color: #ffffff;
-    padding: 14px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    line-height: normal;
-    /* ou um valor como 1.5 para maior espaçamento */
+  width: 100%;
+  background-color: #2d2d2d;
+  border: 1px solid #444;
+  color: #ffffff;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  line-height: normal;
+  /* ou um valor como 1.5 para maior espaçamento */
 }
 
 .contact-form select {
-    /* Mantém as propriedades que você já tinha: */
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1em;
+  /* Mantém as propriedades que você já tinha: */
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
 
-    height: auto;
+  height: auto;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    padding: 18px;
-    width: 110%;
-    max-width: 630px;
+  padding: 18px;
+  width: 110%;
+  max-width: 630px;
 }
 
 .submit-button {
-    width: 300px;
-    background-color: #e7a540;
-    color: white;
-    padding: 16px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
+  width: 300px;
+  background-color: #e7a540;
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
 
 .submit-button:hover {
-    background-color: #e7a540;
+  background-color: #e7a540;
 }
 
 /* Coluna da Direita (Sidebar) */
 .sidebar-wrapper {
-    flex-basis: 35%;
+  flex-basis: 35%;
 }
 
 .sidebar-title {
-    color: #ffffff;
-    font-weight: 700;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
 }
 
 .channels-block {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .channel-card {
-    background-color: #1c1c1c;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: #e0e0e0;
-    font-size: 0.95rem;
+  background-color: #141414;
+  border-radius: 10px;
+  padding: 20px;
+  border-color: #000000;
+  border: #000000;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #e0e0e0;
+  font-size: 0.95rem;
 }
 
 .channel-card img {
-    width: 24px;
-    height: 24px;
-    filter: invert(1);
-    /* Deixa os ícones pretos em branco */
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+  /* Deixa os ícones pretos em branco */
 }
 
 .about-us-block p {
-    color: #e0e0e0;
-    font-size: 0.95rem;
-    line-height: 1.7;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
+
 
 /* =================================
    ESTILOS DO FOOTER
@@ -1285,9 +1384,24 @@ ul {
         display: none;
     }
 
+    .main-header {
+        display: block;
+        max-height: 60px;
+    }
+    
+    .header-container {
+        padding-right: 25px;
+        display: flex;
+    }
+
     .hero-content {
-        margin-bottom: 50px;
         margin-top: 20px;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        margin-bottom: 200px;
+        padding: 0px 40px;
+        
     }
 
     .hero-content h1 {
@@ -1336,11 +1450,13 @@ ul {
 
 
     .about-section {
-        padding: 60px 0;
-        margin-top: 200px;
+        padding: 0 10px;
+        margin-top: 250px;
+        margin-bottom: 0px;
     }
 
     .about-container {
+        padding-top: 20px;
         flex-direction: column;
         gap: 60px;
     }
@@ -1353,6 +1469,7 @@ ul {
     .about-content {
         /* O conteúdo passa a ocupar toda a largura */
         width: 100%;
+        padding-top: 30px;
         margin-left: 0;
         padding-left: 20px;
         padding-right: 20px;
@@ -1374,13 +1491,19 @@ ul {
         height: 1px;
     }
 
+    .partners-section2 {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
 
     .more-about-section {
         padding-bottom: 80px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     .more-about-container {
-        max-width: 80vw;
+        max-width: 90vw;
         gap: 0;
         align-items: center;
         justify-content: center;
@@ -1391,7 +1514,8 @@ ul {
 
     .more-about-image {
         /* display: none; */
-        max-width: 110%;
+        min-width: 300px;
+        min-height: 80px;
         margin-right: 45px;
     
     }
@@ -1399,6 +1523,7 @@ ul {
 
     .more-about-content {
         margin-top: 20px;
+        padding: 0px 0px;
         max-width: 100%;
     }
 
@@ -1406,6 +1531,7 @@ ul {
 
     .services-container {
         max-width: 90vw;
+        gap: 60px;
         flex-direction: column;
     }
 
@@ -1468,9 +1594,11 @@ ul {
         gap: 60px;
         text-align: center;
 
-        max-width: 90vw;
-        width: 90vw;
         overflow: hidden;
+    }
+
+    .contact-section {
+        padding: 5px;
     }
 
     .form-wrapper,
