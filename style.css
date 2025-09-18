@@ -46,7 +46,7 @@ ul {
 
 /* Header com Efeito de Rolagem */
 .main-header.scrolled {
-    background-color: rgba(255, 255, 255, 0.171);
+    background-color: #1c1c1b;
     backdrop-filter: blur(120px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -307,11 +307,13 @@ ul {
     /* Amarelo */
     color: white;
     padding: 8px 35px;
+    align-items: center;
+    min-height: 40px;
     border-radius: 5px;
     font-weight: 600;
     font-size: 15px;
     text-transform: uppercase;
-    display: inline-block;
+    display: inline-flex;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -393,20 +395,53 @@ ul {
    ================================= */
 
 .about-section {
-    padding: 100px 20px;
-    margin-top: 120px;
-    /* background-color: #f8f9fa; */
+    padding: 100px 0; /* Ajustamos o padding para a seção inteira */
+    margin-top: 60px;
     background-color: white;
-    /* Um cinza bem claro para diferenciar da seção branca */
 }
 
 .about-container {
-    max-width: 1200px;
     margin: 0 auto;
+    padding: 0; /* Garante um espaçamento nas laterais */
     display: flex;
     align-items: center;
-    gap: 60px;
-    /* Espaçamento entre a imagem e o texto */
+    min-height: 500px; /* Dê uma altura mínima para a seção ficar boa */
+
+    /* ESSAS DUAS LINHAS SÃO ESSENCIAIS */
+    position: relative; /* Para que o ::before seja posicionado em relação a este container */
+    overflow: hidden;   /* Para garantir que a forma não crie uma barra de rolagem horizontal */
+}
+
+/* AQUI A MÁGICA ACONTECE */
+.about-container::before {
+    content: ''; /* Obrigatório para pseudo-elementos */
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 0;  /* Cola na borda esquerda */
+    transform: translateY(-50%); /* Ajuste fino da centralização vertical */
+    
+    width: 50%; /* Ocupa um pouco mais da metade da largura do container */
+    height: 90%; /* A altura pode ser maior que 100% para criar uma curva mais suave */
+    
+    /* A IMAGEM QUE VOCÊ QUER USAR */
+    background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),  url('/imgs/ph12.jpg'); /* <<< TROQUE PELO CAMINHO DA SUA IMAGEM */
+    background-size: cover;
+    background-position: center;
+
+    /* A FORMA DE MEIO-CÍRCULO */
+    border-radius: 0 50% 50% 0;
+    z-index: 1; /* Coloca a forma de imagem atrás do conteúdo de texto */
+}
+
+.about-content {
+    /* Ajustamos o conteúdo de texto */
+    position: relative; /* Garante que o conteúdo respeite o z-index */
+    z-index: 2; /* Coloca o texto NA FRENTE da imagem */
+    width: 40%; /* Define a largura da área de texto */
+    margin-left: auto; /* Empurra o texto para a direita */
+    padding-left: 80px; /* Adiciona um respiro entre a curva da imagem e o texto */
+    padding-right: 40px;
+    text-align: left;
 }
 
 .about-image {
@@ -420,13 +455,6 @@ ul {
     height: auto;
     border-radius: 10px;
     /* Bordas arredondadas para a imagem */
-}
-
-.about-content {
-    flex: 1;
-    /* Ocupa a outra metade */
-    max-width: 50%;
-    text-align: left;
 }
 
 /* Estilos de texto reutilizáveis que podemos usar em outras seções */
@@ -486,6 +514,8 @@ ul {
     background-color: #ffffff;
     /* Fundo branco para alternar com a seção anterior */
     overflow: hidden;
+    padding-left: 100px;
+    padding-right: 100px;
     /* Evita que a imagem vaze caso seja muito grande */
 }
 
@@ -501,15 +531,15 @@ ul {
 
 .more-about-image {
     flex: 1;
-    max-width: 50%;
+    max-width: 100%;
+    
     /* Um pouco menor que o texto para dar mais destaque ao conteúdo */
 }
 
 .more-about-image img {
-    width: 100%;
-    display: block;
-    /* Remove pequenos espaços em branco abaixo da imagem */
+    width: 120%;    /* Remove pequenos espaços em branco abaixo da imagem */
     border-radius: 10px;
+    
 }
 
 .more-about-content {
@@ -528,14 +558,14 @@ ul {
    ================================= */
 
 .services-section {
-    padding: 100px 20px;
-    background-color: black;
+    padding: 100px 80px;
+
+    background-color: #1c1c1b;
     /* Preto/Cinza bem escuro */
 }
 
 .services-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
     display: flex;
     align-items: center;
     gap: 60px;
@@ -543,7 +573,7 @@ ul {
 
 .services-content {
     flex: 1;
-    max-width: 35%;
+    max-width: 25%;
     /* O texto ocupa um espaço menor */
     text-align: left;
 }
@@ -572,7 +602,7 @@ ul {
 /* Container dos Cards de Serviço */
 .services-cards-container {
     flex: 1;
-    max-width: 65%;
+    max-width: 45%;
     /* Os cards ocupam o espaço maior */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -584,7 +614,7 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
+    gap:20px;
     align-items: center;
     justify-content: start;
 
@@ -634,7 +664,6 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.1) 80%);
     z-index: 2;
 }
 
@@ -869,16 +898,15 @@ ul {
    ================================= */
 
 .contact-section {
-    background-color: #000000;
-    padding: 100px 20px;
+    background-color: #1c1c1b;
+    padding: 60px 80px;
 }
 
 .contact-container {
-    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 100px;
+    gap: 200px;
 }
 
 /* Coluna do Formulário */
@@ -1258,7 +1286,8 @@ ul {
     }
 
     .hero-content {
-        margin-bottom: 10vh;
+        margin-bottom: 50px;
+        margin-top: 20px;
     }
 
     .hero-content h1 {
@@ -1280,6 +1309,7 @@ ul {
 
     .info-card {
         max-width: 90vw;
+        min-height: 100px;
         box-sizing: border-box;
         padding: 10px;
     }
@@ -1296,6 +1326,8 @@ ul {
 
     .info-card p {
         font-size: 13px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     .section-title {
@@ -1304,7 +1336,8 @@ ul {
 
 
     .about-section {
-        padding: 20vh 20px 20px 20px;
+        padding: 60px 0;
+        margin-top: 200px;
     }
 
     .about-container {
@@ -1312,13 +1345,22 @@ ul {
         gap: 60px;
     }
 
-    .about-image {
-        max-width: 100%;
+    .about-container::before {
+        /* No celular, podemos esconder a forma para simplificar */
+        display: none; 
     }
 
     .about-content {
+        /* O conteúdo passa a ocupar toda a largura */
+        width: 100%;
+        margin-left: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center; /* Centralizar pode ficar bom no mobile */
+    }
+
+    .about-image {
         max-width: 100%;
-        text-align: center;
     }
 
     .hero-traces {
@@ -1349,7 +1391,8 @@ ul {
 
     .more-about-image {
         /* display: none; */
-        max-width: 100%;
+        max-width: 110%;
+        margin-right: 45px;
     
     }
 
