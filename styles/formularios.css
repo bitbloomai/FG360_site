@@ -1,0 +1,109 @@
+/* styles/formularios.css */
+
+/* Estrutura da Página de Formulário */
+.form-page-section {
+    background-color: #1c1c1b;
+    padding: 180px 40px 100px 40px; /* Padding superior maior para compensar o header fixo */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.form-page-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-page-subtitle {
+    color: #dcdcdc;
+    margin: -20px auto 40px auto;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Ajustes no formulário herdado de style.css */
+.form-page-section .contact-form {
+    text-align: left; /* Alinha os labels à esquerda */
+}
+
+.form-page-section .contact-form select {
+    width: 100%;
+    max-width: none;
+    padding-right: 14px; /* Remove padding extra do select */
+}
+
+.form-page-section .contact-form .form-row {
+    gap: 25px; /* Reduz o gap entre os campos */
+}
+
+.form-page-section .contact-form .button-row {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilo para o input de arquivo */
+.form-page-section input[type="file"] {
+    background-color: #2d2d2d;
+    border: 1px dashed #555;
+    color: #ccc;
+    padding: 20px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.form-page-section input[type="file"]::-webkit-file-upload-button {
+    background: #e7a540;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.form-page-section input[type="file"]:hover {
+    background-color: #333;
+    border-color: #e7a540;
+}
+
+/* Mensagem de Feedback */
+.form-feedback {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: none; /* Começa escondido */
+    text-align: center;
+}
+
+.form-feedback.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+.form-feedback.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+/* Responsividade */
+@media(max-width: 770px) {
+    .form-page-section {
+        padding: 120px 20px 60px 20px;
+    }
+
+    .form-page-section .contact-form .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}

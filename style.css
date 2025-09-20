@@ -110,6 +110,7 @@ ul {
 /* Dropdown "Serviços" */
 .dropdown {
     position: relative;
+    padding-bottom: 15px; /* <--- ADICIONE ESTA LINHA */
 }
 
 .dropdown-menu {
@@ -121,8 +122,7 @@ ul {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     padding: 10px 0;
-    margin-top: 15px;
-    /* Espaço entre o menu e o item "Serviços" */
+    margin-top: 0; /* <--- REMOVA A MARGEM DAQUI */
     min-width: 200px;
 }
 

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhe Conosco - FG 360 Transportadora</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <link rel="stylesheet" href="../styles/formularios.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo-link"> <img src="../imgs/logo.png" alt="Logo FG 360" class="logo">
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Início</a></li>
+                    <li><a href="../index.html#quemsomos" class="nav-link">Quem Somos</a></li>
+                    <li><a href="trabalhe-conosco.html" class="nav-link active">Trabalhe Conosco</a></li> <li><a href="seja-agregado.html" class="nav-link">Seja Nosso Agregado</a></li>
+                    <li class="dropdown">
+                        <a href="../index.html#servicos" class="nav-link">Serviços <span class="arrow-down">&#9660;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../index.html#servicos">Transporte de Cargas</a></li>
+                            <li><a href="../index.html#servicos">Logística Integrada</a></li>
+                            <li><a href="../index.html#servicos">Armazenagem</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../index.html#rastreio" class="nav-link">Rastreie sua NF</a></li>
+                    <li><a href="../index.html#contato" class="nav-link">Contatos</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="../index.html#contato" class="cta-button">Cotação</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-page-section">
+            <div class="form-page-container">
+                <h1 class="contact-title">FAÇA PARTE DA NOSSA <span>EQUIPE</span></h1>
+                <p class="form-page-subtitle">Se você se identifica com nossos valores e quer crescer profissionalmente, preencha o formulário e envie seu currículo!</p>
+
+                <form id="trabalhe-conosco-form" class="contact-form" action="URL_DO_SEU_BACKEND" method="POST" enctype="multipart/form-data">
+                    <div class="form-group full-width">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone/Whatsapp</label>
+                            <input type="tel" id="telefone" name="telefone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cidade">Cidade / Estado</label>
+                            <input type="text" id="cidade" name="cidade" required placeholder="Ex: São Paulo / SP">
+                        </div>
+                        <div class="form-group">
+                            <label for="area">Área de Interesse</label>
+                            <select id="area" name="area" required>
+                                <option value="" disabled selected>-- Selecione uma opção --</option>
+                                <option value="Motorista">Motorista</option>
+                                <option value="Logistica">Logística / Operacional</option>
+                                <option value="Comercial">Comercial / Vendas</option>
+                                <option value="Administrativo">Administrativo / Financeiro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="curriculo">Anexe seu Currículo (PDF ou DOCX)</label>
+                        <input type="file" id="curriculo" name="curriculo" accept=".pdf,.doc,.docx" required>
+                    </div>
+                    <div class="form-group button-row">
+                        <button type="submit" class="submit-button">Enviar Candidatura</button>
+                    </div>
+                </form>
+                <div id="form-feedback" class="form-feedback"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        </footer>
+    
+    <a href="https://wa.me/5512997791211" class="whatsapp-float" target="_blank">
+        <img src="../imgs/btn_wpp.png" alt="WhatsApp"> <span class="notification-badge">1</span>
+    </a>
+
+    <script src="../script.js"></script>
+    <script src="../js/form-handler.js"></script>
+
+</body>
+</html>

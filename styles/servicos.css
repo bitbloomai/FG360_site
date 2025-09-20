@@ -1,0 +1,162 @@
+/* styles/servicos.css */
+
+/* --- Seção Hero Específica para Páginas de Serviço --- */
+.hero-servico {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden; /* Garante que a transição não cause scroll */
+}
+
+.hero-servico .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.hero-servico .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 2;
+}
+
+.hero-servico .hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-servico h1 {
+    font-size: 56px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* --- Transição Curvada (O Segredo da Integração) --- */
+.shaped-divider {
+    position: absolute;
+    bottom: -1px; /* Leve sobreposição para evitar linhas finas */
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: 10;
+}
+
+.shaped-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px; /* Altura da curva */
+}
+
+.shaped-divider .shape-fill {
+    fill: #FFFFFF; /* Cor de fundo da próxima seção */
+}
+
+/* --- Seções de Conteúdo --- */
+.servico-descricao, .servico-publico {
+    padding: 100px 40px;
+}
+
+.servico-descricao {
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.servico-publico {
+    background-color: #f8f9fa; /* Fundo cinza claro para contraste */
+    text-align: center;
+}
+
+.servico-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.servico-descricao h2, .servico-publico h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.servico-descricao .section-paragraph, .servico-publico .section-paragraph {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* --- Lista de Clientes (Seção "Para Quem") --- */
+.publico-lista {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.publico-lista li {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+    text-align: center;
+}
+
+.publico-lista .icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.publico-lista h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+/* --- Ajustes Gerais e Responsividade --- */
+main {
+    padding-top: 80px; /* Altura do seu header fixo */
+}
+
+@media (max-width: 768px) {
+    main {
+        padding-top: 60px;
+    }
+
+    .hero-servico {
+        height: 50vh;
+    }
+
+    .hero-servico h1 {
+        font-size: 36px;
+    }
+
+    .servico-descricao, .servico-publico {
+        padding: 60px 20px;
+    }
+
+    .servico-descricao h2, .servico-publico h2 {
+        font-size: 28px;
+    }
+}
