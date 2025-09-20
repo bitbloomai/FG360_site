@@ -1,9 +1,15 @@
 /* styles/servicos.css */
-
+body {
+    margin: 0;
+    /* font-family: Arial, sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    background-color: #1c1c1b;;
+    color: #333;
+}
 /* --- Seção Hero Específica para Páginas de Serviço --- */
 .hero-servico {
     position: relative;
-    height: 60vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,7 +53,7 @@
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* --- Transição Curvada (O Segredo da Integração) --- */
+/* --- Transição Curvada (CÓDIGO CORRIGIDO) --- */
 .shaped-divider {
     position: absolute;
     bottom: -1px; /* Leve sobreposição para evitar linhas finas */
@@ -123,8 +129,8 @@
 }
 
 .publico-lista .icon {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     margin-bottom: 15px;
 }
 
