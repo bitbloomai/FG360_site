@@ -932,7 +932,7 @@ ul {
 
 .scroll-right2 {
     /* Ajuste o tempo (30s) se quiser mais rápido ou mais lento */
-    animation: scrollRight 30s linear infinite;
+    animation: scrollRight 35s linear infinite;
 }
 
 /* Slide (item do carrossel) */
@@ -1725,12 +1725,12 @@ ul {
 }
 
 /* IMAGENS DE FUNDO DOS VEÍCULOS (Mantenha as suas) */
-#card-tres-quartos { background-image: url('imgs/veiculos/caminhao_34.png'); }
-#card-carreta { background-image: url('imgs/veiculos/carreta_aberta.png'); }
+#card-tres-quartos { background-image: url('imgs/veiculos/caminhao_34.jpg'); }
+#card-carreta { background-image: url('imgs/veiculos/carreta_aberta.jpg'); }
 #card-truck { background-image: url('imgs/veiculos/caminhao_truck.png'); }
 #card-van { background-image: url('imgs/veiculos//van.png'); }
-#card-moto { background-image: url('/imgs/veiculos/moto.png'); }
-#card-fiorino { background-image: url('/imgs/veiculos/fiorino.png'); }
+#card-moto { background-image: url('imgs/veiculos/moto.jpg'); }
+#card-fiorino { background-image: url('imgs/veiculos/fiorino.png'); }
 
 /* Estilo da sobreposição de conteúdo */
 .card-overlay {
