@@ -34,4 +34,40 @@ document.addEventListener('DOMContentLoaded', function() {
         navList.addEventListener('click', handleNavClick);
     }
 
+    const frotaCards = document.querySelectorAll('.frota-card');
+
+        frotaCards.forEach(card => {
+            card.addEventListener('click', (event) => {
+                // Impede que o clique no card se propague para o document (e feche imediatamente)
+                event.stopPropagation(); 
+
+                // Alterna a classe 'active' no card clicado
+                card.classList.toggle('active');
+
+                // Fecha outros cards abertos (mantido, pois é um bom UX)
+                frotaCards.forEach(otherCard => {
+                    if (otherCard !== card && otherCard.classList.contains('active')) {
+                        otherCard.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // NOVO: Adiciona um listener para cliques em qualquer lugar do documento
+        document.addEventListener('click', (event) => {
+            let cardClicked = false;
+            frotaCards.forEach(card => {
+                if (card.contains(event.target)) { // Verifica se o clique foi dentro de um card
+                    cardClicked = true;
+                }
+            });
+
+            // Se o clique não foi dentro de nenhum card, fecha todos os cards abertos
+            if (!cardClicked) {
+                frotaCards.forEach(card => {
+                    card.classList.remove('active');
+                });
+            }
+        });
+
 });

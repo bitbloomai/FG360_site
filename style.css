@@ -803,7 +803,7 @@ ul {
 .partners-section {
     padding: 20px 0;
     /* Aumentei o padding vertical e removi o horizontal */
-    background-color: #f8f9fa;
+    background-color: #FFFFFF;
     text-align: center;
 }
 
@@ -897,7 +897,7 @@ ul {
 .partners-section2 {
     padding-top: 40PX;
     /* Aumentei o padding vertical e removi o horizontal */
-    background-color: #fFfFfF;
+    background-color: #FFFFFF;
     text-align: center;
 }
 
@@ -926,29 +926,28 @@ ul {
 /* Trilha do Carrossel */
 .carousel-track2 {
     display: flex;
-    width: calc(250px * 12);
-    /* Largura de cada slide X número total de slides (originais + duplicados) */
+    /* Largura de cada slide (250px) X número TOTAL de slides (12 originais + 12 duplicados = 24) */
+    width: calc(250px * 24);
 }
 
 .scroll-right2 {
-    animation: scrollRight 40s linear infinite;
+    /* Ajuste o tempo (30s) se quiser mais rápido ou mais lento */
+    animation: scrollRight 30s linear infinite;
 }
 
 /* Slide (item do carrossel) */
 .carousel-slide2 {
     height: 200px;
     /* Altura de cada logo */
-    width: 250px;
+    width: 400px;
     /* Largura de cada logo */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 40px;
+    padding: 0 ;
 }
 
 .carousel-slide2 img {
-    max-width: 150%;
-    max-height: 1000px;
     /* Altura máxima da imagem do logo */
     filter: grayscale(100%);
     /* Deixa os logos em escala de cinza */
@@ -967,16 +966,15 @@ ul {
     from {
         transform: translateX(0);
     }
-
     to {
-        transform: translateX(calc(-250px * 6));
-        /* Desloca para a esquerda pelo tamanho dos slides originais */
+        /* Desloca para a esquerda pelo tamanho dos 12 slides ORIGINAIS */
+        transform: translateX(calc(-300px * 12));
     }
 }
 
 @keyframes scrollLeft {
     from {
-        transform: translateX(calc(-250px * 6));
+        transform: translateX(calc(-250px * 12));
     }
 
     to {
@@ -1652,36 +1650,6 @@ ul {
     .contact-list li {
         gap: 5px;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /* =================================
         Estilos do Footer
        ================================= */
@@ -1708,5 +1676,213 @@ ul {
         flex-direction: column;
         text-align: center;
     }
+}    
 
+/* Importando uma fonte para um visual mais moderno */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.frota-expansivel {
+    width: 100%; /* ALTERAÇÃO 1: Ocupa a largura total */
+    padding: 60px 0; /* Espaçamento vertical, sem horizontal */
+}
+
+.frota-titulo {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+/* Contêiner dos cards */
+.frota-container {
+    display: flex;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 0; /* ALTERAÇÃO 1: Remove o arredondamento nas bordas da tela */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Estilo base de cada card de veículo */
+.frota-card {
+    flex: 1;
+    min-width: 80px;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    transition: all 0.6s ease-in-out;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+
+/* Efeito ao passar o mouse */
+.frota-card:hover {
+    flex: 2;
+    filter: grayscale(0%);
+    transform: scale(1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+/* IMAGENS DE FUNDO DOS VEÍCULOS (Mantenha as suas) */
+#card-tres-quartos { background-image: url('imgs/veiculos/caminhao_34.png'); }
+#card-carreta { background-image: url('imgs/veiculos/carreta_aberta.png'); }
+#card-truck { background-image: url('imgs/veiculos/caminhao_truck.png'); }
+#card-van { background-image: url('imgs/veiculos//van.png'); }
+#card-moto { background-image: url('/imgs/veiculos/moto.png'); }
+#card-fiorino { background-image: url('/imgs/veiculos/fiorino.png'); }
+
+/* Estilo da sobreposição de conteúdo */
+.card-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    transition: all 0.6s ease-in-out;
+    opacity: 0;
+}
+
+/* ALTERAÇÃO 2: Título começa na horizontal e na base */
+.card-title {
+    font-size: 1.8rem;
+    margin: 0;
+    /* Removemos 'writing-mode', 'text-orientation', e 'transform: rotate' */
+    position: absolute; /* Usamos position absolute para controle fino */
+    left: 25px;
+    bottom: 25px;
+    transform: translateY(0); /* Estado inicial é na base */
+    transition: all 0.6s ease-in-out;
+}
+
+.card-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    opacity: 0;
+}
+
+/* ALTERAÇÃO 2: Título apenas sobe no hover */
+.frota-card:hover .card-title {
+    transform: translateY(-80px); /* Apenas sobe para a posição final */
+}
+
+.frota-card:hover .card-icon {
+    transform: translateY(-90px);
+    opacity: 1;
+}
+
+.frota-card:hover .card-description {
+    max-height: 150px;
+    opacity: 1;
+}
+
+/* Media Queries para responsividade (sem alterações aqui) */
+@media (max-width: 1024px) {
+    .frota-titulo { font-size: 2.2rem; }
+    .frota-container { height: 400px; }
+    .card-title { font-size: 1.5rem; }
+    .card-icon { font-size: 2.5rem; }
+}
+
+/* ============================================== */
+/* === INÍCIO DAS ALTERAÇÕES PARA MOBILE (<= 768px) === */
+/* ============================================== */
+@media (max-width: 768px) {
+    .frota-titulo {
+        font-size: 1.8rem;
+        margin-bottom: 60px;
+    }
+
+    .frota-container {
+        flex-direction: column; /* Cards um embaixo do outro */
+        height: auto; /* Altura automática */
+        box-shadow: none; /* Remove a sombra do container principal */
+    }
+
+    .frota-card {
+        flex: none; /* Desativa o flex-grow/shrink */
+        width: 100%; /* Ocupa a largura total */
+        height: 150px; /* Altura padrão para cards "fechados" */
+        filter: grayscale(100%); /* Já colorido no mobile */
+        margin-bottom: 0; /* Coloca os cards colados */
+        border-bottom: 1px solid rgba(255,255,255,0.1); /* Linha divisória sutil */
+        border-radius: 0; /* Remove bordas arredondadas nos cards */
+        box-shadow: none; /* Remove sombra do card para desktop */
+        overflow: hidden; /* Garante que a descrição só apareça ao expandir */
+        transition: height 0.6s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição para altura */
+    }
+    
+    /* Efeito de click para cards no mobile */
+    .frota-card.active {
+        height: 350px; /* Altura quando o card está "aberto" */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Adiciona sombra ao abrir */
+    }
+
+    /* Conteúdo do overlay no mobile */
+    .card-overlay {
+        justify-content: flex-start; /* Alinha o conteúdo ao topo */
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)); /* Gradiente de cima para baixo */
+    }
+
+    .card-icon {
+        display: block; /* Mostra o ícone no mobile */
+        font-size: 2.2rem;
+        opacity: 1; /* Visível por padrão */
+        margin-bottom: 5px;
+        transform: translateY(0); /* Reseta a transformação de desktop */
+    }
+
+    .card-title {
+        position: relative; /* Volta ao fluxo normal */
+        left: 0;
+        bottom: 0;
+        font-size: 1.4rem;
+        transform: translateY(0); /* Reseta a transformação de desktop */
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    /* Descrição escondida por padrão e aparece com a classe 'active' */
+    .card-description {
+        max-height: 0; /* Escondido por padrão */
+        opacity: 0;
+        font-size: 0.9rem;
+        padding-right: 15px; /* Para não ficar colado na borda direita */
+        transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    }
+
+    .frota-card.active .card-description {
+        max-height: 150px; /* Mostra a descrição quando ativo */
+        opacity: 1;
+    }
+
+    /* Remove efeitos de hover para mobile */
+    .frota-card:hover {
+        flex: none; /* Desativa a expansão horizontal */
+        filter: grayscale(0%);
+        transform: scale(1.0);
+        box-shadow: none;
+        z-index: auto;
+    }
+    .frota-card:hover .card-title,
+    .frota-card:hover .card-icon {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
